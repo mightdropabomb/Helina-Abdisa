@@ -405,7 +405,23 @@ function initScrollProgress() {
         progressBar.style.width = scrollPercent + '%';
     });
 }
+function setSubject(subject) {
+    // 1. Visual update: highlight the selected button
+    const buttons = document.querySelectorAll('.sub-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
 
+    // 2. Functional update: Update the email link
+    const mailLink = document.getElementById('mailLink');
+    const baseEmail = "bellaaajss@gmail.com";
+    const encodedSubject = encodeURIComponent("Inquiry regarding " + subject);
+    
+    mailLink.href = `mailto:${baseEmail}?subject=${encodedSubject}`;
+    
+    // 3. Optional: Add a little "pop" animation
+    mailLink.style.transform = "scale(1.2)";
+    setTimeout(() => { mailLink.style.transform = "scale(1)"; }, 200);
+}
 // Initialize scroll progress
 initScrollProgress();
 
