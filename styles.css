@@ -1808,6 +1808,84 @@ body {
     border-color: var(--glass-border-strong);
 }
 
+/* Floating Menu Wrapper */
+.fab-menu-wrapper {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fab-container:hover .fab-menu-wrapper {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+/* Subject Picker Styling */
+.subject-picker {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 15px;
+    width: 220px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.picker-label {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+
+.subject-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sub-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 12px;
+    text-align: left;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sub-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-5px);
+}
+
+/* Selected State for the Subject */
+.sub-btn.active {
+    background: var(--gradient-text, #6366f1); /* Use your theme color */
+    border-color: white;
+}
+
+/* Alignment for icons */
+.fab-actions {
+    display: flex;
+    gap: 15px;
+}
+
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
